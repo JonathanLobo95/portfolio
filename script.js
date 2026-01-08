@@ -1,9 +1,8 @@
 const textElement = document.querySelector('.typing-text'); // Cambiado a selector de clase para que coincida con tu HTML
-const textToType = "Full Stack Developer | 6 años liderando equipos y gestión comercial";
+const textToType = "Full Stack Developer | 3 años liderando equipos y gestión comercial";
 let index = 0;
 
 function typeWriter(){
-    // Error 1: Tenías "lenght", lo correcto es "length"
     if(index < textToType.length){ 
         textElement.innerHTML += textToType.charAt(index);
         index++;
@@ -28,7 +27,7 @@ const observarScroll = () => {
     const elementos = document.querySelectorAll('.revelar-izq, .revelar-der');
 
     const observer = new IntersectionObserver((entries) => {
-        // Error 2: "forEach" debe ser con "e" minúscula
+         
         entries.forEach(entry => { 
             if (entry.isIntersecting) {
                 entry.target.classList.add('aparecer');
@@ -39,12 +38,10 @@ const observarScroll = () => {
         threshold: 0.15
     });
 
-    // Error 3: Era "forEach" (minúscula) y "observe" (con 'v', no 'c')
     elementos.forEach(el => observer.observe(el)); 
 };
 
 // Iniciar funciones
-// Error 4: El evento correcto es 'DOMContentLoaded' (termina en 'ed', no 'Loader')
 document.addEventListener('DOMContentLoaded', () => {
     typeWriter();
     observarScroll();
